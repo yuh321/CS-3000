@@ -4,36 +4,32 @@
 #include <iostream>
 using namespace std;
 
-//1
+enum PowerState
+{
+	Off,
+	On,
+	Sleep
+};
 
-//enum PowerState
-//{
-//	Off,
-//	On,
-//	Sleep
-//};
-//
-//int main()
-//{
-//	PowerState device_state = Sleep; 
-//
-//	switch (device_state)
-//	{
-//	case Off:
-//		cout << "Device Off.";
-//		break;
-//
-//	case On:
-//		cout << "Device On.";
-//		break;
-//
-//	case Sleep:
-//		cout << "Device Asleep.";
-//		break;
-//	}
-//	
-//	return 0;
-//}
+int main()
+{
+	PowerState device_state = Sleep;
+
+	switch (device_state)
+	{
+	case Off: 
+		cout << "Device is turned off";
+		break;
+	case On:
+		cout << "Device is running";
+		break;
+	case Sleep:
+		cout << "Device is in power-saving mode";
+		break;
+	}
+
+	return 0;
+}
 
 //2
 
@@ -50,7 +46,7 @@ int main()
 	string user_input;
 	OrderStatus current_status;
 
-	cout << "Enter order status (Placed/Cooking/Ready/Delivered): ";
+	cout << "Enter order status (Placed / Cooking / Ready / Delivered): ";
 	cin >> user_input;
 
 	if (user_input == "Placed")
@@ -63,25 +59,28 @@ int main()
 		current_status = Delivered;
 	else
 	{
-		cout << "Invalid Input";
+		cout << "Invalid Input!";
 		return 0;
 	}
+
 
 	switch (current_status)
 	{
 	case Placed:
-		cout << "Order Recieved";
+		cout << "Order received. We will start soon!";
 		break;
 	case Cooking:
-		cout << "Your order is being prepared";
+		cout << "Your food is being cooked. Please wait.";
 		break;
 	case Ready:
-		cout << "Your order is ready";
-	case Delivered: 
-		cout << "Order delivered";
+		cout << "Your food is ready. Please collect it!";
+		break;
+	case Delivered:
+		cout << "Order delivered. Enjoy your neal!";
 		break;
 	}
 
-	return 0; 
-
+	return 0;
 }
+
+//Other practice problems are nearly identical.
